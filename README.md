@@ -4,7 +4,7 @@
 
 ## By Phong Hoang
 
-[LinkdIn](https://www.linkedin.com/in/phong-hoang-2a8659265/) | [GitHub](https://github.com/hoang-p6) | [Frontend-Repo](https://github.com/hoang-p6/AnglersAtlas-FRONTEND)
+[LinkdIn](https://www.linkedin.com/in/phong-hoang-2a8659265/) | [GitHub](https://github.com/hoang-p6) | [Frontend-Repo](https://github.com/hoang-p6/AnglersAtlas-FRONTEND) | [Trello](https://trello.com/b/kv8pD6g3/anglers-atlas)
 
 ---
 
