@@ -1,4 +1,4 @@
-const Fish = require('../models/lfish')
+const Fish = require('../models/fish')
 
 const getAllFish = async (req, res) => {
   try {
