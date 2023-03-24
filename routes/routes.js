@@ -8,9 +8,11 @@ const userController = require('../controllers/userController')
 
 //Routes for Water
 router.get('/water', waterController.getAllWaters)
+router.post('/water', waterController.createWater)
 router.get('/water/:id', waterController.getWaterById)
 router.delete('/water/:id', waterController.deleteWater)
 router.put('/water/:id', waterController.updateWater)
+
 //Routes for User
 router.get('/user', userController.getAllUsers)
 router.get('/user/:id', userController.getUserById)

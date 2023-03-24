@@ -1,4 +1,4 @@
-const Water = require('../models/user')
+const Water = require('../models/water')
 
 const getAllWaters = async (req, res) => {
   try {
@@ -13,11 +13,22 @@ const getWaterById = async (req, res) => {
     const { id } = req.params
     const water = await Water.findById(id)
     if (water) {
-      return res.status(200).json({ user })
+      return res.status(200).json({ water })
     }
     return res.status(404).send('Requested user does not exist')
   } catch (error) {
     return res.status(500).send(error.message)
+  }
+}
+const createWater = async (req, res) => {
+  try {
+    const water = await new Water(req.body)
+    await water.save()
+    return res.status(201).json({
+      water
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
   }
 }
 const deleteWater = async (req, res) => {
@@ -46,5 +57,6 @@ module.exports = {
   getAllWaters,
   getWaterById,
   deleteWater,
-  updateWater
+  updateWater,
+  createWater
 }

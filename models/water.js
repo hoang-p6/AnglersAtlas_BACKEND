@@ -6,7 +6,8 @@ const Water = new Schema(
     name: { type: String, required: true },
     type: { type: String, required: true },
     state: { type: String, required: true },
-    coordinates: { type: String, required: false }
+    coordinates: { type: String, required: false },
+    species: { type: Array, required: false }
   },
   { timestamps: true }
 )
