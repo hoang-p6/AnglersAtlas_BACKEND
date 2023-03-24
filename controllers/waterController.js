@@ -1,26 +1,50 @@
-const Water = require('../models/water')
+const Water = require('../models/user')
 
-// const createWater = async (req, res) => {
-//   try {
-//     constbody = await new Water(req.body)
-//     awaitbody.save()
-//     return res.status(201).json({
-//       Water
-//     })
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message })
-//   }
-// }
-const getAllWater = async (req, res) => {
+const getAllWaters = async (req, res) => {
   try {
-    const water = await Water.find()
-    return res.status(200).json({ water })
+    const waters = await Water.find()
+    return res.status(200).json({ waters })
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
-
+const getWaterById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const water = await Water.findById(id)
+    if (water) {
+      return res.status(200).json({ user })
+    }
+    return res.status(404).send('Requested user does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+const deleteWater = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Water.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Water deleted')
+    }
+    throw new Error('Water not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+const updateWater = async (req, res) => {
+  try {
+    const water = await Water.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(water)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 module.exports = {
-  // createWater,
-  getAllWater
+  getAllWaters,
+  getWaterById,
+  deleteWater,
+  updateWater
 }
