@@ -15,7 +15,7 @@ const getWaterById = async (req, res) => {
     if (water) {
       return res.status(200).json({ water })
     }
-    return res.status(404).send('Requested user does not exist')
+    return res.status(404).send('Requested water does not exist')
   } catch (error) {
     return res.status(500).send(error.message)
   }

@@ -2,8 +2,8 @@ const Fish = require('../models/fish')
 
 const getAllFish = async (req, res) => {
   try {
-    const lfish = await Fish.find()
-    return res.status(200).json({ lfish })
+    const fish = await Fish.find()
+    return res.status(200).json({ fish })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -25,7 +25,7 @@ const createFish = async (req, res) => {
     const fish = await new Fish(req.body)
     await fish.save()
     return res.status(201).json({
-      lure
+      fish
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -48,7 +48,7 @@ const updateFish = async (req, res) => {
     const fish = await Fish.findByIdAndUpdate(req.params.id, req.body, {
       new: true
     })
-    res.status(200).json(lure)
+    res.status(200).json(fish)
   } catch (error) {
     return res.status(500).send(error.message)
   }

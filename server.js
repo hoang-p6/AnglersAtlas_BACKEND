@@ -1,11 +1,11 @@
 const express = require('express')
 const routes = require('./routes/routes')
-const db = require('./db')
 const logger = require('morgan')
 const cors = require('cors')
-const PORT = process.env.PORT || 3001
 const AuthRouter = require('./routes/authRouter')
 
+const db = require('./db')
+const PORT = process.env.PORT || 3001
 const app = express()
 
 const { Water } = require('./models/water')
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 app.use(cors())
 app.use('/api', routes)
-app.use('/api/auth', AuthRouter)
+app.use('/auth', AuthRouter)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
 

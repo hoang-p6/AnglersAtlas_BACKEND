@@ -20,11 +20,13 @@ router.delete('/user/:id', userController.deleteUser)
 router.put('/user/:id', userController.updateUser)
 //Routes for Fish
 router.get('/fish', fishController.getAllFish)
+router.post('/fish', fishController.createFish)
 router.get('/fish/:id', fishController.getFishById)
 router.delete('/fish/:id', fishController.deleteFish)
 router.put('/fish/:id', fishController.updateFish)
 //Routes for Lure
 router.get('/lure', lureController.getAllLures)
+router.post('/lure', lureController.createLure)
 router.get('/lure/:id', lureController.getLureById)
 router.delete('/lure/:id', lureController.deleteLure)
 router.put('/lure/:id', lureController.updateLure)

@@ -11,11 +11,11 @@ router.put(
   controller.UpdatePassword
 )
 router.get(
-  '/session',
+  '/session'
+  ,
   middleware.stripToken,
   middleware.verifyToken,
   controller.CheckSession
 )
-// router.get('/:user_id/details', controller.FindUserById)
 
 module.exports = router
