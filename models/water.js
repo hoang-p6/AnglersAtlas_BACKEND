@@ -8,7 +8,8 @@ const Water = new Schema(
     state: { type: String, required: true },
     image: { type: String, required: true },
     coordinates: { type: String, required: false },
-    species: [{ type: Schema.Types.ObjectId, ref: 'Fish' }]
+    species: [{ type: Schema.Types.ObjectId, ref: 'Fish' }],
+    log: [{ type: Schema.Types.ObjectId, ref: 'Log' }]
   },
   { timestamps: true }
 )

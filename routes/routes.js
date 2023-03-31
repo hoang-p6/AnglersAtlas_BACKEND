@@ -4,6 +4,7 @@ const waterController = require('../controllers/waterController')
 const fishController = require('../controllers/fishController')
 const lureController = require('../controllers/lureController')
 const userController = require('../controllers/userController')
+const logController = require('../controllers/logController')
 // const authController = require('../controllers/authController')
 
 //Routes for Water
@@ -30,5 +31,11 @@ router.post('/lure', lureController.createLure)
 router.get('/lure/:id', lureController.getLureById)
 router.delete('/lure/:id', lureController.deleteLure)
 router.put('/lure/:id', lureController.updateLure)
+//Routes for Log
+router.get('/log', logController.getAllLogs)
+router.post('/log', logController.createLog)
+router.get('/log/:id', logController.getLogById)
+router.delete('/log/:id', logController.deleteLog)
+router.put('/log/:id', logController.updateLog)
 
 module.exports = router
