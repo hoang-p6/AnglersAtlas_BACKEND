@@ -3,15 +3,23 @@ const Water = require('../models/water')
 const getAllWaters = async (req, res) => {
   try {
     const waters = await Water.find()
+
+      .populate('log')
+      .populate('species')
+      .exec()
     return res.status(200).json({ waters })
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
+
 const getWaterById = async (req, res) => {
   try {
     const { id } = req.params
     const water = await Water.findById(id)
+      .populate('log')
+      .populate('species')
+      .exec()
     if (water) {
       return res.status(200).json({ water })
     }
@@ -20,6 +28,7 @@ const getWaterById = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+
 const createWater = async (req, res) => {
   try {
     const water = await new Water(req.body)
