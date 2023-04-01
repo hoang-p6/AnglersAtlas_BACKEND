@@ -22,7 +22,7 @@ const getLogById = async (req, res) => {
 }
 const createLog = async (req, res) => {
   try {
-    const log = await new Fish(req.body)
+    const log = await new Log(req.body)
     await log.save()
     return res.status(201).json({
       log
