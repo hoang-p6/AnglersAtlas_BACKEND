@@ -7,7 +7,8 @@ const Water = new Schema(
     type: { type: String, required: true },
     state: { type: String, required: true },
     image: { type: String, required: true },
-    coordinates: { type: String, required: false },
+    longitude: { type: String, required: true },
+    latitude: { type: String, required: true },
     species: [{ type: Schema.Types.ObjectId, ref: 'Fish' }],
     log: [{ type: Schema.Types.ObjectId, ref: 'Log' }]
   },

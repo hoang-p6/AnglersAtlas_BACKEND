@@ -8,10 +8,10 @@ const getAllLogs = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
-const getLogById = async (req, res) => {
+const getLogByWaterId = async (req, res) => {
   try {
     const { id } = req.params
-    const log = await Log.findById(id)
+    const log = await Log.find({ waterId: id })
     if (log) {
       return res.status(200).json({ log })
     }
@@ -55,7 +55,7 @@ const updateLog = async (req, res) => {
 }
 module.exports = {
   getAllLogs,
-  getLogById,
+  getLogByWaterId,
   deleteLog,
   updateLog,
   createLog

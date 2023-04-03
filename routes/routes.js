@@ -34,7 +34,7 @@ router.put('/lure/:id', lureController.updateLure)
 //Routes for Log
 router.get('/log', logController.getAllLogs)
 router.post('/log', logController.createLog)
-router.get('/log/:id', logController.getLogById)
+router.get('/log/:id', logController.getLogByWaterId)
 router.delete('/log/:id', logController.deleteLog)
 router.put('/log/:id', logController.updateLog)
 
