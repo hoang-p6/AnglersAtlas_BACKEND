@@ -6,7 +6,7 @@ const Fish = new Schema(
     name: { type: String, required: true },
     species: { type: String, required: true },
     image: { type: String, required: true },
-    water: [{ type: Schema.Types.ObjectId, ref: 'Water' }]
+    water: [{ type: Schema.Types.ObjectId, ref: 'Water', required: false }]
   },
   { timestamps: true }
 )
