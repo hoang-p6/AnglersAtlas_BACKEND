@@ -13,18 +13,11 @@ const { Water } = require('./models/water')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
-app.use(
-  cors({
-    origin: '*'
-  })
-)
-app.get('/products/:id', function (req, res, next) {
-  res.json({ msg: 'This is CORS-enabled for all origins!' })
+app.get('/cors', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*')
+  res.send({ msg: 'This has CORS enabled ' })
 })
 
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
-})
 app.use('/api', routes)
 app.use('/auth', AuthRouter)
 
