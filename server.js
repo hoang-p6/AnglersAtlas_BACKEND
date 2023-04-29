@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 app.use(
   cors({
-    origin: 'https://anglersatlas.surge.sh'
+    origin: '*'
   })
 )
 app.get('/products/:id', function (req, res, next) {
