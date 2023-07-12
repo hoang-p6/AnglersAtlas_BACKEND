@@ -20,7 +20,7 @@ app.use(cors())
 // })
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://anglersatlas.surge.sh/')
+  req.header('Access-Control-Allow-Origin', 'https://anglersatlas.surge.sh/')
   next()
 })
 
