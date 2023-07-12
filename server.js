@@ -14,10 +14,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 app.use(cors())
-app.get('/cors', (req, res) => {
-  res.set('Access-Control-Allow-Origin', 'https://anglersatlas.surge.sh/')
-  res.send({ msg: 'This has CORS enabled ' })
-})
+// app.get('/cors', (req, res) => {
+//   res.set('Access-Control-Allow-Origin', 'https://anglersatlas.surge.sh/')
+//   res.send({ msg: 'This has CORS enabled ' })
+// })
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://anglersatlas.surge.sh/')
