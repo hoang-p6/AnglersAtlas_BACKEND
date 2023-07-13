@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const MONGODBURI = process.env.MONGODB_URI
 
 mongoose
-  .connect(MONGODBURI)
+  .connect(
+    'mongodb+srv://phonghoang:1234@phongscluster.jsyc63j.mongodb.net/AnglersAtlas?retryWrites=true&w=majority'
+  )
   .then(() => {
     console.log('Successfully connected to MongoDB.')
   })
