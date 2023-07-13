@@ -18,7 +18,7 @@ app.use(cors())
 app.use('/api', routes)
 app.use('/auth', AuthRouter)
 app.get('/', (req, res) => {
-  res.send('Hello, World!')
+  res.send('This is the backend for Anglers Atlas')
 })
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
