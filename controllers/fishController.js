@@ -5,7 +5,8 @@ const getAllFish = async (req, res) => {
     const fish = await Fish.find()
     return res.status(200).json({ fish })
   } catch (error) {
-    return res.status(500).send(error.message)
+    // return res.status(500).send(error.message)
+    return res.status(500).send('NO WORK')
   }
 }
 const getFishById = async (req, res) => {
