@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(logger('dev'))
 app.use(cors())
 
-app.use('/', routes)
+app.use('/api', routes)
 app.use('/auth', AuthRouter)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
