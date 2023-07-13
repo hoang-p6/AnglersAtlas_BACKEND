@@ -18,6 +18,9 @@ app.use(cors())
 
 app.use('/api', routes)
 app.use('/auth', AuthRouter)
+app.get('/', (req, res) => {
+  res.send('Hello, World!')
+})
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
