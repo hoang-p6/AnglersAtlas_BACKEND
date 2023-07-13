@@ -5,7 +5,8 @@ const cors = require('cors')
 const AuthRouter = require('./routes/AuthRouter')
 
 const db = require('./db')
-const PORT = process.env.PORT || 3001
+const PORT =
+  process.env.PORT || 3001 || 'https://anglers-atlas-backend.herokuapp.com/'
 const app = express()
 
 const { Water } = require('./models/water')
