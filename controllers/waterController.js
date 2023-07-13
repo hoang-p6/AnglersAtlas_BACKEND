@@ -7,8 +7,7 @@ const getAllWaters = async (req, res) => {
       .populate('log')
       .populate('species')
       .exec()
-    // return res.status(200).json({ waters })
-    return res.json({ waters })
+    return res.status(200).json(await Water.find())
   } catch (error) {
     return res.status(500).send(error.message)
   }
