@@ -2,7 +2,6 @@ const Water = require('../models/water')
 
 const getAllWaters = async (req, res) => {
   try {
-    res.send('Get me some water!')
     const waters = await Water.find()
 
       .populate('log')
