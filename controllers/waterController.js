@@ -16,7 +16,7 @@ const getAllWaters = async (req, res) => {
 const getWaterById = async (req, res) => {
   try {
     const { id } = req.params
-    const water = await Water.findById(id)
+    const water = await Water.findOne(id)
       .populate('log')
       .populate('species')
       .exec()
