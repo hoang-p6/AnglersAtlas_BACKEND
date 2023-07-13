@@ -5,7 +5,7 @@ const cors = require('cors')
 const AuthRouter = require('./routes/AuthRouter')
 
 const db = require('./db')
-const PORT = process.env.MONGODB_URI || 3001
+const PORT = process.env.PORT || 3001
 const app = express()
 
 const { Water } = require('./models/water')
